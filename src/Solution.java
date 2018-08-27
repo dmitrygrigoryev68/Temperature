@@ -13,16 +13,17 @@ public class Solution {
         for (int i = 0; i < N; i++) { T[i] = ThreadLocalRandom.current().nextInt(-1000, 999);
 
         }
-        System.out.println(solution(T,N));
+        System.out.println(solution(T));
     }
 
-    public static String solution(int[] T, int N) {
+    public static String solution(int[] T) {
 
         int[] diff = new int[4];
         int max = 0;
         int maxIn = 0;
         int min = 0;
-        int k = N/4;
+        int k = T.length/4;
+        String [] season = {"WINTER","SPRING","SUMMER","AUTUMN"};
 
         for (int i = 0; i < 4; i++) {
             for (int j = i * k ; j < (i + 1)* k; j++) {
@@ -40,17 +41,6 @@ public class Solution {
                 maxIn = i;
             }
         }
-            switch (maxIn) {
-            case 0:
-                return "WINTER";
-            case 1:
-                return "SPRING";
-            case 2:
-                return "SUMMER";
-            case 3:
-                return "AUTUMN";
-            default:
-                return "WRONG DATA";
-        }
+        return season[maxIn];
     }
 }
