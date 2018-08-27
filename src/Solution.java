@@ -1,4 +1,4 @@
- import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Solution {
 
@@ -22,12 +22,10 @@ public class Solution {
         int max = 0;
         int maxIn = 0;
         int min = 0;
-        int i = 0;
-        int j = 0;
         int k = N/4;
 
-        for (i = 0; i < 4; i++) {
-            for (j = i * k ; j < (i + 1)* k; j++) {
+        for (int i = 0; i < 4; i++) {
+            for (int j = i * k ; j < (i + 1)* k; j++) {
                 if (min > T[j]) {
                     min = T[j];
                 }
@@ -53,7 +51,6 @@ public class Solution {
                 return "AUTUMN";
             default:
                 return "WRONG DATA";
-
         }
     }
 }
